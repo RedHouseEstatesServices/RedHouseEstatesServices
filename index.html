@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Red House Estate Services</title>
+  <meta name="description" content="Red House Estate Services — property management, sales, and maintenance." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">Call us: <a href="tel:+447941339633">07941 339633</a></div>
+      <div class="topbar-right"><a href="mailto:info@redhouseestates.example">info@redhouseestates.example</a></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">Red House Estate Services</a>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#listings">Listings</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Managing properties with care</h1>
+        <p>We handle sales, lettings, maintenance and full estate services — locally trusted, professionally run.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="services" class="container services">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Property Sales</h3>
+          <p>Marketing, viewings and sale negotiation to get the best price.</p>
+        </div>
+        <div class="card">
+          <h3>Lettings & Management</h3>
+          <p>Tenant find, vetting, rent collection and ongoing property management.</p>
+        </div>
+        <div class="card">
+          <h3>Maintenance</h3>
+          <p>Trusted contractors for repairs, inspections and ongoing upkeep.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="listings" class="container listings">
+      <h2>Featured Listings</h2>
+      <div class="grid listings-grid" id="listings-grid">
+        <!-- Listing items inserted by script or you can hardcode -->
+        <article class="listing">
+          <img src="placeholder-house-1.jpg" alt="Property 1">
+          <div class="listing-body">
+            <h3>4-bed Red House Lane</h3>
+            <p>Spacious family home with garden — £450,000</p>
+            <a href="#" class="btn small">View details</a>
+          </div>
+        </article>
+        <article class="listing">
+          <img src="placeholder-house-2.jpg" alt="Property 2">
+          <div class="listing-body">
+            <h3>2-bed Riverside Apartment</h3>
+            <p>Modern flat with river views — £220,000</p>
+            <a href="#" class="btn small">View details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About Us</h2>
+      <p>Red House Estate Services has been serving the community for X years. We focus on personalised service and clear communication.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Call us: <a href="tel:+447941339633">07941 339633</a> or email <a href="mailto:info@redhouseestates.example">info@redhouseestates.example</a></p>
+
+      <form id="contact-form" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send message</button>
+        <div id="form-success" class="hidden">Thanks — we'll be in touch shortly.</div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Red House Estate Services — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

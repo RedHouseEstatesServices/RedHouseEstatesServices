@@ -341,7 +341,12 @@
                 <p><strong>Hours:</strong> Monday – Saturday: 8:00am – 6:00pm</p>
             </div>
             <div class="contact-form">
-                <form action="#" method="POST" onsubmit="alert('Thank you! This is a demo form placeholder. Your real website form requires a backend setup.'); return false;">
+                <!-- Netlify form setup: this will capture submissions when the site is deployed to Netlify. -->
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
+                    <!-- Honeypot for bots -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="bot-field" />
+
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
                     
@@ -352,6 +357,7 @@
                     <textarea id="message" name="message" rows="4" required placeholder="Tell us about your cleaning or grounds project..."></textarea>
                     
                     <button type="submit">Send Message</button>
+                    <div id="form-success" style="display:none;margin-top:10px;color:green;">Thanks — we'll be in touch shortly.</div>
                 </form>
             </div>
         </div>
@@ -360,6 +366,20 @@
     <footer>
         <p>&copy; 2026 Red House Estates Services. All Rights Reserved. Based in Stourbridge.</p>
     </footer>
+
+    <script>
+        // Local behaviour: show a friendly message when running locally or on non-Netlify host.
+        document.getElementById('contact-form').addEventListener('submit', function(e){
+            var onNetlify = location.hostname && location.hostname.indexOf('netlify') !== -1;
+            if(!onNetlify){
+                e.preventDefault();
+                document.getElementById('form-success').style.display = 'block';
+                this.reset();
+                return false;
+            }
+            // On Netlify, allow normal form submit so Netlify will capture and forward.
+        });
+    </script>
 
 </body>
 </html>

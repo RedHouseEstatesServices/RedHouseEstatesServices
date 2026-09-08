@@ -1,117 +1,365 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Red House Estate Services</title>
-  <meta name="description" content="Red House Estate Services — property management, sales, and maintenance." />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red House Estates Services | Cleaning, Grounds & Maintenance Stourbridge</title>
+    <style>
+        :root {
+            --primary: #8B263E; /* Premium Brick Red - Glass Cone Inspired */
+            --secondary: #2C5E43; /* Leaf Green for Grounds Care */
+            --dark: #2B2D42; /* Charcoal Gray */
+            --light: #F8F9FA; /* Off White */
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .phone-btn {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .phone-btn:hover {
+            background-color: #721e32;
+        }
+
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .btn-main {
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #1e422f;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .service-card:nth-child(2) {
+            border-top-color: var(--secondary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card ul {
+            list-style-type: none;
+        }
+
+        .service-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #721e32;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplification for mobile presentation */
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">Call us: <a href="tel:+447941339633">07941 339633</a></div>
-      <div class="topbar-right"><a href="mailto:info@redhouseestates.example">info@redhouseestates.example</a></div>
-    </div>
-  </div>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/">Red House Estate Services</a>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#listings">Listings</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">Red House Estates</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:07941339633" class="phone-btn">📞 07941 339633</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
     <section class="hero">
-      <div class="container">
-        <h1>Managing properties with care</h1>
-        <p>We handle sales, lettings, maintenance and full estate services — locally trusted, professionally run.</p>
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
-    </section>
-
-    <section id="services" class="container services">
-      <h2>Our Services</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Property Sales</h3>
-          <p>Marketing, viewings and sale negotiation to get the best price.</p>
+        <div class="hero-content">
+            <h1>Total Property & Grounds Care</h1>
+            <p>Professional cleaning, grounds maintenance, and building care services across Stourbridge and the West Midlands.</p>
+            <a href="#contact" class="btn-main">Request a Free Quote</a>
         </div>
-        <div class="card">
-          <h3>Lettings & Management</h3>
-          <p>Tenant find, vetting, rent collection and ongoing property management.</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Commercial Cleaning</h3>
+                <ul>
+                    <li>Office & Retail Deep Cleaning</li>
+                    <li>Window & Glass Cleaning</li>
+                    <li>End of Tenancy Cleans</li>
+                    <li>High-Pressure Jet Washing</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Grounds Maintenance</h3>
+                <ul>
+                    <li>Lawn Mowing & Turf Care</li>
+                    <li>Hedge Trimming & Pruning</li>
+                    <li>Weed Control & Site Clearance</li>
+                    <li>Litter Picking & Leaf Removal</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Property Maintenance</h3>
+                <ul>
+                    <li>Gutter Clearing & Repairs</li>
+                    <li>General Handyman Services</li>
+                    <li>Fencing Repairs & Painting</li>
+                    <li>Facia & Soffit Cleaning</li>
+                </ul>
+            </div>
         </div>
-        <div class="card">
-          <h3>Maintenance</h3>
-          <p>Trusted contractors for repairs, inspections and ongoing upkeep.</p>
+    </section>
+
+    <section id="about" class="section" style="background-color: #fff; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Proudly Serving Stourbridge</h2>
+            <p class="about-text">
+                Inspired by the robust, local heritage of the Stourbridge Red House Glass Cone, Red House Estates Services delivers dependable, top-to-bottom care for residential and commercial environments. From immaculate interiors to beautifully manicured landscapes, we treat your property like our own.
+            </p>
         </div>
-      </div>
     </section>
 
-    <section id="listings" class="container listings">
-      <h2>Featured Listings</h2>
-      <div class="grid listings-grid" id="listings-grid">
-        <!-- Listing items inserted by script or you can hardcode -->
-        <article class="listing">
-          <img src="placeholder-house-1.jpg" alt="Property 1">
-          <div class="listing-body">
-            <h3>4-bed Red House Lane</h3>
-            <p>Spacious family home with garden — £450,000</p>
-            <a href="#" class="btn small">View details</a>
-          </div>
-        </article>
-        <article class="listing">
-          <img src="placeholder-house-2.jpg" alt="Property 2">
-          <div class="listing-body">
-            <h3>2-bed Riverside Apartment</h3>
-            <p>Modern flat with river views — £220,000</p>
-            <a href="#" class="btn small">View details</a>
-          </div>
-        </article>
-      </div>
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p>Have an estate, building, or garden that needs expert attention? Call or message us today for a completely free, zero-obligation quote.</p>
+                <p><strong>Phone:</strong> <a href="tel:07941339633">07941 339633</a></p>
+                <p><strong>Location:</strong> Stourbridge, West Midlands</p>
+                <p><strong>Hours:</strong> Monday – Saturday: 8:00am – 6:00pm</p>
+            </div>
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="alert('Thank you! This is a demo form placeholder. Your real website form requires a backend setup.'); return false;">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="07123 456789">
+                    
+                    <label for="message">How can we help?</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Tell us about your cleaning or grounds project..."></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
 
-    <section id="about" class="container about">
-      <h2>About Us</h2>
-      <p>Red House Estate Services has been serving the community for X years. We focus on personalised service and clear communication.</p>
-    </section>
+    <footer>
+        <p>&copy; 2026 Red House Estates Services. All Rights Reserved. Based in Stourbridge.</p>
+    </footer>
 
-    <section id="contact" class="container contact">
-      <h2>Contact</h2>
-      <p>Call us: <a href="tel:+447941339633">07941 339633</a> or email <a href="mailto:info@redhouseestates.example">info@redhouseestates.example</a></p>
-
-      <form id="contact-form" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact-form">
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn">Send message</button>
-        <div id="form-success" class="hidden">Thanks — we'll be in touch shortly.</div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Red House Estate Services — All rights reserved.</small>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="140" viewBox="0 0 600 140" role="img" aria-label="Red House Estates badge">
+  <title>Red House Estates Badge</title>
+  <rect x="0" y="0" width="600" height="140" rx="12" fill="#2B2D42"/>
+  <g transform="translate(18,20)">
+    <rect x="0" y="30" width="90" height="60" rx="8" fill="#8B263E"/>
+    <polygon points="0,30 45,0 90,30" fill="#8B263E"/>
+    <rect x="58" y="58" width="12" height="32" rx="2" fill="#fff"/>
+  </g>
+  <text x="140" y="72" font-family="Segoe UI, system-ui, Arial" font-size="34" fill="#fff" font-weight="700">Red House</text>
+  <text x="140" y="100" font-family="Segoe UI, system-ui, Arial" font-size="16" fill="#BEBEBE">Estates Services</text>
+</svg>

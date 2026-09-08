@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-label="Red House Estates wordmark">
+  <title>Red House Estates</title>
+  <!-- small house icon -->
+  <g transform="translate(40,40)">
+    <rect x="0" y="48" width="64" height="48" rx="6" fill="#8B263E"/>
+    <polygon points="-8,48 32,8 72,48" fill="#8B263E"/>
+    <rect x="44" y="72" width="16" height="24" fill="#fff" rx="2"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="140" y="90" font-family="Segoe UI, system-ui, Arial" font-weight="700" font-size="42" fill="#2B2D42">Red House</text>
+  <text x="140" y="132" font-family="Segoe UI, system-ui, Arial" font-weight="600" font-size="20" fill="#8B263E">Estates Services</text>
+</svg>

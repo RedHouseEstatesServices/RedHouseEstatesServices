@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="RH monogram">
+  <title>RH Monogram</title>
+  <rect x="8" y="40" width="224" height="160" rx="20" fill="#8B263E"/>
+  <polygon points="40,40 120,6 200,40" fill="#8B263E"/>
+  <text x="70" y="142" font-family="Segoe UI, system-ui, Arial" font-size="72" fill="#fff" font-weight="700">RH</text>
+</svg>
